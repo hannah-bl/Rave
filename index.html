@@ -20,18 +20,23 @@
   <div id="loading">Initializing</div>
 
 <script>
-const text = document.getElementById("loading");
+document.addEventListener("DOMContentLoaded", () => {
 
-let dots = 0;
+  const text = document.getElementById("loading");
+  if (!text) return;
 
-setInterval(() => {
-    dots = (dots + 1) % 4;
-    text.textContent = "Initializing" + ".".repeat(dots);
-}, 500);
+  let dots = 0;
 
-setTimeout(() => {
-    window.location.href = "pass.html";
-}, 2000);
+  setInterval(() => {
+      dots = (dots + 1) % 4;
+      text.textContent = "Initializing" + ".".repeat(dots);
+  }, 500);
+
+  setTimeout(() => {
+      window.location.href = "pass.html";
+  }, 2000);
+
+});
 </script>
 
 </body>
